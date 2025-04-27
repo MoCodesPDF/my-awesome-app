@@ -2,3 +2,9 @@ h1 {
     margin: 0 auto;
     color: blueviolet;
 }
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
