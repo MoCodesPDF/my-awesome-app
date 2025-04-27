@@ -3,39 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First GitHub Project</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+        :root {
+            --gradient: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%);
+        }
+        * {
+            box-sizing: border-box;
+            line-height: 1.25em;
+        }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #343d4b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            border-radius: 25px;
+            box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+            background-color: #222831;
+            color: white;
+            overflow: hidden;
+        }
+        .weather-side {
+            position: relative;
+            padding: 20px;
+            background: var(--gradient);
+            width: 300px;
+            text-align: center;
+        }
+        .weather-side img {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .info-side {
+            padding: 20px;
+        }
+        .search-container {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: var(--gradient);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-
-<div class="container">
-     <h1>
-        Hello Git
-    </h1>
-  <a href="mailto:youremail@example.com">
-    <button>Email Me</button>
-  </a>
-  <div class="image-grid">
-  <div class="grid-item">
-    <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 1" />
-  </div>
-  <div class="grid-item">
-    <img src="https://images.pexels.com/photos/614117/pexels-photo-614117.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 2" />
-  </div>
-  <div class="grid-item">
-    <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 3" />
-  </div>
-  <div class="grid-item">
-    <img src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 4" />
-  </div>
-</div>
-
-</div>
-
-    <script src="script.js"></script>
+    <div class="container">
+        <div class="weather-side">
+            <h2 class="date-dayname">Tuesday</h2>
+            <span class="date-day">15 Jan 2019</span>
+            <h1 class="weather-temp">29°C</h1>
+            <h3 class="weather-desc">Sunny</h3>
+        </div>
+        <div class="info-side">
+            <div class="today-info">
+                <div class="humidity">HUMIDITY <span>34%</span></div>
+                <div class="wind">WIND <span>0 km/h</span></div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="cityInput" placeholder="Enter city">
+                <button onclick="searchCity()">Search</button>
+            </div>
+            <h2 id="city-name">Paris, FR</h2>
+        </div>
+    </div>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', hour: '2-digit', minute: '2-digit' };
+            document.querySelector('.date-dayname').textContent = now.toLocaleDateString('en-US', options);
+        }
+        
+        function searchCity() {
+            const city = document.getElementById('cityInput').value;
+            if (city) {
+                document.getElementById('city-name').textContent = city;
+            }
+        }
+        
+        updateDateTime();
+        setInterval(updateDateTime, 60000);
+    </script>
+    <script>
+        feather.replace();
+    </script>
+    <footer>This project was coded by Mokgadi and is on GitHub and hosted on Netlify</footer>
 </body>
 </html>
-
-  
-    
-    
