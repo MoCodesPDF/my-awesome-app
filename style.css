@@ -1,91 +1,98 @@
-/* Body styling */
 body {
-  display: flex;
-  justify-content: center; /* Horizontally center */
-  align-items: center;     /* Vertically center */
-  height: 100vh;           /* Full viewport height */
-  margin: 0;               /* Remove default body margin */
-  text-align: center;      /* Center text inside elements */
-  background-color: #f4f4f4; /* Light background to contrast with text */
-  font-family: Arial, sans-serif; /* Ensure a readable font */
+  background: #f9f7fe;
+  font-family: "Roboto", sans-serif;
 }
 
-/* Wrapper for all content */
-.container {
-  display: flex;
-  flex-direction: column;  /* Stack content vertically */
-  justify-content: center; /* Center items vertically */
-  align-items: center;     /* Center items horizontally */
-  text-align: center;      /* Center the text */
-  max-width: 1200px;       /* Optional max width */
-  width: 100%;             /* Full width */
-  padding: 20px;           /* Add padding around content */
-  background-color: white; /* Set background for visibility */
+a {
+  color: #885df1;
 }
 
-/* Heading styling */
-h1 {
-  text-align: center;
-  color: blueviolet;
-  font-size: 36px;          /* Adjust font size */
-  margin-bottom: 20px;      /* Add space below heading */
-  padding: 20px;            /* Add padding to ensure it's not squeezed */
+.weather-app {
+  background: white;
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
 }
 
-/* Your image styles */
-img {
-  display: block;
-  max-width: 100%; 
-  height: auto;
+header {
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 30px;
 }
 
-/* Card styles (if using cards) */
-.card {
-  display: inline-block;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Button styling */
-button {
-  display: block;
-  margin: 10px auto;
-  padding: 10px 20px;
+.search-input {
+  background-color: #f9f7fe;
+  border: none;
+  color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
-  background-color: blueviolet;
+  padding: 20px;
+  width: 75%;
+  border-radius: 6px;
+}
+
+.search-button {
+  margin-left: 5px;
+  font-size: 16px;
+  background-color: #885df1;
   color: white;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: darkviolet;
-}
-
-/* Image Grid */
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 20px;
-  max-width: 800px;
-  margin: 40px auto;
   padding: 20px;
+  line-height: 1;
+  border-radius: 5px;
 }
 
-.grid-item {
-  overflow: hidden;
-  border-radius: 15px;
+main {
+  padding: 30px 0;
+}
+
+.current-temperature {
+  font-size: 48px;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-city {
+  font-size: 38px;
+  font-weight: 900;
+  margin: 0;
+}
+.current-details {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.current-details strong {
+  color: #f65282;
+}
+
+.current-temperature-icon {
   position: relative;
+  top: -8px;
+  font-size: 40px;
+  margin-right: 10px;
 }
 
-.grid-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+.current-temperature-value {
+  font-size: 80px;
+  font-weight: bold;
 }
 
-.grid-item:hover img {
-  transform: scale(1.08); /* Slight zoom */
+.current-temperature-unit {
+  font-size: 28px;
+  position: relative;
+  top: -38px;
+}
+
+footer {
+  border-top: 1px solid #f9f7fe;
+  text-align: center;
+  padding-top: 15px;
+
+  color: rgba(39, 33, 66, 0.4);
 }
