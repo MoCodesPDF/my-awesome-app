@@ -1,17 +1,91 @@
+/* Body styling */
+body {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center;     /* Vertically center */
+  height: 100vh;           /* Full viewport height */
+  margin: 0;               /* Remove default body margin */
+  text-align: center;      /* Center text inside elements */
+  background-color: #f4f4f4; /* Light background to contrast with text */
+  font-family: Arial, sans-serif; /* Ensure a readable font */
+}
+
+/* Wrapper for all content */
+.container {
+  display: flex;
+  flex-direction: column;  /* Stack content vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center;     /* Center items horizontally */
+  text-align: center;      /* Center the text */
+  max-width: 1200px;       /* Optional max width */
+  width: 100%;             /* Full width */
+  padding: 20px;           /* Add padding around content */
+  background-color: white; /* Set background for visibility */
+}
+
+/* Heading styling */
 h1 {
   text-align: center;
   color: blueviolet;
+  font-size: 36px;          /* Adjust font size */
+  margin-bottom: 20px;      /* Add space below heading */
+  padding: 20px;            /* Add padding to ensure it's not squeezed */
 }
 
+/* Your image styles */
 img {
-  display: block; /* remove tiny space below image */
-  max-width: 100%; /* makes image responsive but not squashed */
-  height: auto; /* keeps the correct proportions */
+  display: block;
+  max-width: 100%; 
+  height: auto;
 }
 
-div {
-  display: inline-block; /* only as big as the image */
-  border-radius: 15px;
+/* Card styles (if using cards) */
+.card {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Button styling */
+button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkviolet;
+}
+
+/* Image Grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.grid-item {
   overflow: hidden;
-  margin: 0 auto; /* center the div (optional if you need it) */
+  border-radius: 15px;
+  position: relative;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.08); /* Slight zoom */
 }
